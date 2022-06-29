@@ -6,7 +6,7 @@ import {
   Tabs,
 } from '@react-native-nx-monorepo/shared-ui';
 import getMonth from 'date-fns/getMonth';
-
+import Fonts from '../assets/ABCWhyteInktrap-Regular.woff';
 export function App() {
   const currentMonth = getMonth(new Date());
   const DUMMY_DATA = [
@@ -20,12 +20,15 @@ export function App() {
   ];
 
   return (
-    <NativeBaseProvider>
-      <Tabs />
-      <AnalyticsChart data={DUMMY_DATA} />
-      <LocationList />
-      <NxWelcome title="web" />
-    </NativeBaseProvider>
+    <Fonts>
+      Go
+      <NativeBaseProvider>
+        <Tabs />
+        <AnalyticsChart data={DUMMY_DATA} />
+        <LocationList />
+        <NxWelcome title="web" />
+      </NativeBaseProvider>
+    </Fonts>
   );
 }
 
